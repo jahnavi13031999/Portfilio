@@ -1,72 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Optionally, include Bootstrap CSS for additional styling -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Optionally, include Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-    <header class="bg-dark text-white text-center py-5">
-        <h1>Welcome to My Portfolio</h1>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="#home" onclick="showContent('home')">Home</a></li>
+          <li><a href="#about" onclick="showContent('about')">About</a></li>
+          <li>
+            <a href="#contact" onclick="showContent('experience')">Experience</a>
+          </li>
+          <li>
+            <a href="#projects" onclick="showContent('projects')">Projects</a>
+          </li>
+          <li>
+            <a href="#contact" onclick="showContent('contact')">Contact</a>
+          </li>
+        </ul>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </nav>
     </header>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <!-- <a class="navbar-brand" href="#">Portfolio</a> -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#about">About Me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
+    <section id="home" class="content-section">
+      <div class="hero">
+        <div class="hero-content">
+          <div class="hero-image">
+            <img src="profile3.jpg" alt="Your Name" />
+          </div>
+          <div class="hero-text">
+            <h1>Turning Data Into Insights</h1>
+            <p>
+                As an Associate Software Engineer at OTSi, my focus on developing robust software solutions with Spring MVC and ReactJS has been central to our team's success. 
+                At Saint Peter's University, my pursuit of a Master’s in Data Science is honing my analytical skills, preparing me to tackle complex data-driven challenges.
+                My career is anchored in a commitment to continuous learning and problem-solving. The blend of my technical expertise, a strong foundation in Frontend Technologies, 
+                and advanced data science education guides my ambition to contribute to innovative and impactful solutions in the tech industry.
+            </p>
+          </div>
         </div>
-    </nav>
-
-    <section id="about" class="container mt-5">
-        <h2>About Me</h2>
-        <p>As an Associate Software Engineer at OTSi, my focus on developing robust software solutions with Spring MVC and ReactJS has been central to our team's success. At Saint Peter's University, my pursuit of a Master’s in Data Science is honing my analytical skills, preparing me to tackle complex data-driven challenges.
-            My career is anchored in a commitment to continuous learning and problem-solving. The blend of my technical expertise, a strong foundation in Frontend Technologies, and advanced data science education guides my ambition to contribute to innovative and impactful solutions in the tech industry.</p>
+      </div>
     </section>
 
-    <section id="projects" class="container mt-5">
+    <section id="projects" class="content-section">
+      <div class="container mt-5">
         <h2>Projects</h2>
-        <ul class="list-group">
-            <li class="list-group-item"><a href="https://github.com/jahnavi13031999/Air-Quality-Prediction.git">Air-Quality-Prediction
-                     </a></li>
-        </ul>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Air Quality Prediction</h5>
+                <p class="card-text">
+                    Our goal in this study was to use machine learning techniques to estimate the air quality.
+                    Dataset includes the daily pollution and Air quality Index(AQI) data for several different cities.
+                    The dataset, “city_day.csv”, was retrieved from an accessible data source. 
+                    The dataset include columns pertaining to several pollutants, including the AQI and AQI bucket for each day, 
+                    as well as PM2.5, PM10, NO, NO2, CO, SO2,O3, Benzene, Toluene, and Xylene.
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#airqualitypredictionModal"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">Analyzing New York City Government Payroll Data</h5>
+                <p class="card-text">
+                    The objective of this project is to analyze the New York City government payroll data 
+                    To gain insights into employee salaries, work hours, and other related factors. By examining this dataset, 
+                    we aim to understand patterns in employee compensation, identify potential anomalies or discrepancies, 
+                    and provide actionable recommendations for payroll management and policy-making.
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#payrollDataModal"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="contact" class="container mt-5">
+    <section id="contact" class="content-section">
+      <div class="container mt-5">
         <h2>Contact</h2>
-        <p>Email: <i class="fas fa-envelope"></i>jammulajahnavi13@gmail.com</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/jahnavijammula/"><i class="fab fa-linkedin"></i>
-                yourprofile</a></p>
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="name@example.com"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea
+              class="form-control"
+              id="message"
+              rows="3"
+              placeholder="Your message..."
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </div>
     </section>
+
+    <!-- Modal for Air Quality Prediction -->
+    <div
+      class="modal fade"
+      id="airqualitypredictionModal"
+      tabindex="-1"
+      aria-labelledby="airqualitypredictionModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="airqualitypredictionModal">
+                Air Quality Prediction
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+                Our goal in this study was to use machine learning techniques to estimate the air quality.
+                Dataset includes the daily pollution and Air quality Index(AQI) data for several different cities.
+                The dataset, “city_day.csv”, was retrieved from an accessible data source. The dataset include columns 
+                pertaining to several pollutants, including the AQI and AQI bucket for each day, as well as PM2.5, PM10, NO, NO2, CO, SO2,O3, Benzene, Toluene, and Xylene.
+            </p>
+            <p>Technologies used include:</p>
+            <ul>
+              <li>Machine Learning</li>
+              <li>Data Visualization</li>
+              <li>Python (Programming Language)</li>
+              <li>Pandas (Software)</li>
+              <li>Azure Databricks</li>
+            </ul>
+            <p>
+              Check out the full project on
+              <a
+                href="https://github.com/jahnavi13031999/Air-Quality-Prediction"
+                target="_blank"
+                >GitHub</a
+              >.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for Smart Traffic Management -->
+    <div
+      class="modal fade"
+      id="payrollDataModal"
+      tabindex="-1"
+      aria-labelledby="payrollDataModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="payrollDataModal">
+                Analyzing New York City Government Payroll Data
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+                The objective of this project is to analyze the New York City government payroll data 
+                To gain insights into employee salaries, work hours, and other related factors. By examining this dataset, 
+                We aim to understand patterns in employee compensation, identify potential anomalies or discrepancies, and provide 
+                actionable recommendations for payroll management and policy-making.
+            </p>
+            <p>Technologies used include:</p>
+            <ul>
+              <li>Tableau/li>
+              <li>Microscoft Word</li>
+              <li>Microscoft Powerpoint</li>
+            </ul>
+            <p>
+              Check out the full project on
+              <a
+                href="https://public.tableau.com/app/profile/jahnavi.jammula/viz/city_payroll/Dashboard1"
+                target="_blank"
+                >Tableau Public</a
+              >.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer class="bg-dark text-white text-center py-4">
-        <p>&copy; 2024 My Portfolio</p>
+      <p>&copy; My Portfolio</p>
     </footer>
 
-    <!-- Optionally, include Bootstrap JS for additional functionality -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
+    <script src="index.js"></script>
+  </body>
 </html>
